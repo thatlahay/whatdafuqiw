@@ -27,10 +27,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run:
-          name: install dependencies
-          command: |
-          
+    
 
       - save_cache:
           paths:
@@ -46,7 +43,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python3 hello.py
+            python hello.py
             
       - store_artifacts:
           path: test-reports
